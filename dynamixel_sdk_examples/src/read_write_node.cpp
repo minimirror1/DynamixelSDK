@@ -52,9 +52,9 @@ using namespace dynamixel;
 #define PROTOCOL_VERSION      2.0             // Default Protocol version of DYNAMIXEL X series.
 
 // Default setting
-#define DXL1_ID               1               // DXL1 ID
+#define DXL1_ID               8               // DXL1 ID
 #define DXL2_ID               2               // DXL2 ID
-#define BAUDRATE              57600           // Default Baudrate of DYNAMIXEL X series
+#define BAUDRATE              1000000           // Default Baudrate of DYNAMIXEL X series
 #define DEVICE_NAME           "/dev/ttyUSB0"  // [Linux] To find assigned port, use "$ ls /dev/ttyUSB*" command
 
 PortHandler * portHandler;
@@ -128,12 +128,12 @@ int main(int argc, char ** argv)
     return -1;
   }
 
-  dxl_comm_result = packetHandler->write1ByteTxRx(
-    portHandler, DXL2_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  if (dxl_comm_result != COMM_SUCCESS) {
-    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL2_ID);
-    return -1;
-  }
+  // dxl_comm_result = packetHandler->write1ByteTxRx(
+  //   portHandler, DXL2_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  // if (dxl_comm_result != COMM_SUCCESS) {
+  //   ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL2_ID);
+  //   return -1;
+  // }
 
   ros::init(argc, argv, "read_write_node");
   ros::NodeHandle nh;
