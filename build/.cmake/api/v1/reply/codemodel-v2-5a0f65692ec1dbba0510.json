@@ -1,0 +1,546 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44
+					]
+				},
+				{
+					"build" : "gtest",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/usr/src/googletest"
+				},
+				{
+					"build" : "gtest/googlemock",
+					"childIndexes" : 
+					[
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "/usr/src/googletest/googlemock",
+					"targetIndexes" : 
+					[
+						21,
+						22
+					]
+				},
+				{
+					"build" : "gtest/googletest",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "/usr/src/googletest/googletest",
+					"targetIndexes" : 
+					[
+						23,
+						24
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "dynamixel_sdk_examples",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gmock",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						21,
+						22
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gtest",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						23,
+						24
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "_dynamixel_sdk_examples_generate_messages_check_deps_BulkGetItem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_dynamixel_sdk_examples_generate_messages_check_deps_BulkGetItem-Debug-e8f8d8b227c49dfefd4f.json",
+					"name" : "_dynamixel_sdk_examples_generate_messages_check_deps_BulkGetItem",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_dynamixel_sdk_examples_generate_messages_check_deps_BulkSetItem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_dynamixel_sdk_examples_generate_messages_check_deps_BulkSetItem-Debug-12d9d49efce93667aae9.json",
+					"name" : "_dynamixel_sdk_examples_generate_messages_check_deps_BulkSetItem",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_dynamixel_sdk_examples_generate_messages_check_deps_GetPosition::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_dynamixel_sdk_examples_generate_messages_check_deps_GetPosition-Debug-ec3ecfc6f1193f241155.json",
+					"name" : "_dynamixel_sdk_examples_generate_messages_check_deps_GetPosition",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_dynamixel_sdk_examples_generate_messages_check_deps_SetPosition::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_dynamixel_sdk_examples_generate_messages_check_deps_SetPosition-Debug-3c8189a9d6dbdf0d7f0d.json",
+					"name" : "_dynamixel_sdk_examples_generate_messages_check_deps_SetPosition",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_dynamixel_sdk_examples_generate_messages_check_deps_SyncGetPosition::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_dynamixel_sdk_examples_generate_messages_check_deps_SyncGetPosition-Debug-47224d682dcfbec88fb8.json",
+					"name" : "_dynamixel_sdk_examples_generate_messages_check_deps_SyncGetPosition",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_dynamixel_sdk_examples_generate_messages_check_deps_SyncSetPosition::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_dynamixel_sdk_examples_generate_messages_check_deps_SyncSetPosition-Debug-8e6b84caace35889bb79.json",
+					"name" : "_dynamixel_sdk_examples_generate_messages_check_deps_SyncSetPosition",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bulk_read_write_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bulk_read_write_node-Debug-fcfd5a7bb33385c7c8fb.json",
+					"name" : "bulk_read_write_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_test_results::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_test_results-Debug-e677d9baf01a7697cd3c.json",
+					"name" : "clean_test_results",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "download_extra_data::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-download_extra_data-Debug-0b8089ebe20b85797558.json",
+					"name" : "download_extra_data",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "doxygen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-doxygen-Debug-0b402ddbc2301865a84c.json",
+					"name" : "doxygen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_gencpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_gencpp-Debug-ae4b241ef3c474bbc4f2.json",
+					"name" : "dynamixel_sdk_examples_gencpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_generate_messages::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_generate_messages-Debug-49a65fa15519dbecc0b7.json",
+					"name" : "dynamixel_sdk_examples_generate_messages",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_generate_messages_cpp-Debug-f50eddd93430558bc726.json",
+					"name" : "dynamixel_sdk_examples_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_generate_messages_eus-Debug-0e6fc112894b55f5a932.json",
+					"name" : "dynamixel_sdk_examples_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_generate_messages_lisp-Debug-7b2629dfc50f2f6e9352.json",
+					"name" : "dynamixel_sdk_examples_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_generate_messages_nodejs-Debug-72b946fe2f1b4ca44d31.json",
+					"name" : "dynamixel_sdk_examples_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_generate_messages_py-Debug-8101dde5e3f88986cafe.json",
+					"name" : "dynamixel_sdk_examples_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_geneus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_geneus-Debug-85c2a854389a482708d9.json",
+					"name" : "dynamixel_sdk_examples_geneus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_genlisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_genlisp-Debug-cd232d5e8a4f713a5ac3.json",
+					"name" : "dynamixel_sdk_examples_genlisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_gennodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_gennodejs-Debug-a898f3161a56c09151cd.json",
+					"name" : "dynamixel_sdk_examples_gennodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamixel_sdk_examples_genpy::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamixel_sdk_examples_genpy-Debug-b39ffc0f25498e8d2ea8.json",
+					"name" : "dynamixel_sdk_examples_genpy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock::@e3f94eedc5dc07131386",
+					"jsonFile" : "target-gmock-Debug-def73e5cc9209a9c3d9b.json",
+					"name" : "gmock",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock_main::@e3f94eedc5dc07131386",
+					"jsonFile" : "target-gmock_main-Debug-4842b847674adef012c8.json",
+					"name" : "gmock_main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest::@b738d542747fbb7ea6e3",
+					"jsonFile" : "target-gtest-Debug-eae8d9fc233b5a8c8295.json",
+					"name" : "gtest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest_main::@b738d542747fbb7ea6e3",
+					"jsonFile" : "target-gtest_main-Debug-666aa8f6c191b80c6d19.json",
+					"name" : "gtest_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "indirect_address_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-indirect_address_node-Debug-64ee2b4d37a6053a320d.json",
+					"name" : "indirect_address_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "read_write_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-read_write_node-Debug-074f4b704d204ab9145f.json",
+					"name" : "read_write_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_cpp-Debug-2bedd0566231a5872915.json",
+					"name" : "roscpp_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_eus-Debug-250d1d642989fdf50c5a.json",
+					"name" : "roscpp_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_lisp-Debug-782a75ded228dcd35900.json",
+					"name" : "roscpp_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_nodejs-Debug-709adb9d54c8339557e7.json",
+					"name" : "roscpp_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_py-Debug-0be20a0839ffe98e7697.json",
+					"name" : "roscpp_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_cpp-Debug-464fe2579b6b4162002d.json",
+					"name" : "rosgraph_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_eus-Debug-5d216c67cd9481bc8329.json",
+					"name" : "rosgraph_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_lisp-Debug-f100a4fd4965cbf6a688.json",
+					"name" : "rosgraph_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_nodejs-Debug-20395e44975cb5ce94c2.json",
+					"name" : "rosgraph_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_py-Debug-8a8c682a72ee2c82b4dd.json",
+					"name" : "rosgraph_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests-Debug-419df415fb70bf636220.json",
+					"name" : "run_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_cpp-Debug-e195d27c54644555322b.json",
+					"name" : "std_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_eus-Debug-80786c3be0963e059254.json",
+					"name" : "std_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_lisp-Debug-0f99a99bc1e550fbde1b.json",
+					"name" : "std_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_nodejs-Debug-b23b79f43d523463fee0.json",
+					"name" : "std_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_py-Debug-1961233dbfe0fb5be88f.json",
+					"name" : "std_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sync_read_write_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sync_read_write_node-Debug-01ff9e55f8a8ea28d904.json",
+					"name" : "sync_read_write_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tests-Debug-d0880f8c29ac2c09d4b0.json",
+					"name" : "tests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/ros_ws/src/DynamixelSDK/build",
+		"source" : "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

@@ -52,10 +52,11 @@ using namespace dynamixel;
 #define PROTOCOL_VERSION      2.0             // Default Protocol version of DYNAMIXEL X series.
 
 // Default setting
-#define DXL1_ID               8               // DXL1 ID
-#define DXL2_ID               2               // DXL2 ID
+#define DXL1_BODY_L_R         1               // 몸통 좌우 모터 ID
+#define DXL2_HEAD_L_R         2               // 머리 좌우 모터 ID
+#define DXL3_HEAD_UPDOWN      3               // 머리 상하 모터 ID
 #define BAUDRATE              1000000           // Default Baudrate of DYNAMIXEL X series
-#define DEVICE_NAME           "/dev/ttyUSB0"  // [Linux] To find assigned port, use "$ ls /dev/ttyUSB*" command
+#define DEVICE_NAME           "/dev/robotis"  // [Linux] To find assigned port, use "$ ls /dev/ttyUSB*" command
 
 PortHandler * portHandler;
 PacketHandler * packetHandler;
@@ -103,10 +104,31 @@ void setPositionCallback(const dynamixel_sdk_examples::SetPosition::ConstPtr & m
   }
 }
 
+bool checkDeviceExistence(uint8_t id)
+{
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+  uint32_t position = 0;
+
+  // 현재 위치를 읽어보면서 장치 존재 여부 확인
+  dxl_comm_result = packetHandler->read4ByteTxRx(
+    portHandler, id, ADDR_PRESENT_POSITION, &position, &dxl_error);
+
+  if (dxl_comm_result == COMM_SUCCESS) {
+    ROS_INFO("Device ID:%d exists", id);
+    return true;
+  } else {
+    ROS_ERROR("Device ID:%d does not exist. Error code: %d", id, dxl_comm_result);
+    return false;
+  }
+}
+
+
 int main(int argc, char ** argv)
 {
   uint8_t dxl_error = 0;
   int dxl_comm_result = COMM_TX_FAIL;
+  bool devices_exist = true;
 
   portHandler = PortHandler::getPortHandler(DEVICE_NAME);
   packetHandler = PacketHandler::getPacketHandler(PROTOCOL_VERSION);
@@ -121,19 +143,45 @@ int main(int argc, char ** argv)
     return -1;
   }
 
-  dxl_comm_result = packetHandler->write1ByteTxRx(
-    portHandler, DXL1_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  if (dxl_comm_result != COMM_SUCCESS) {
-    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL1_ID);
+  // 3개 장치 존재 여부 확인
+  ROS_INFO("Checking Dynamixel motor devices...");
+  if (!checkDeviceExistence(DXL1_BODY_L_R)) {
+    devices_exist = false;
+  }
+  if (!checkDeviceExistence(DXL2_HEAD_L_R)) {
+    devices_exist = false;
+  }
+  if (!checkDeviceExistence(DXL3_HEAD_UPDOWN)) {
+    devices_exist = false;
+  }
+
+  if (!devices_exist) {
+    ROS_ERROR("Some Dynamixel devices are not connected. Please check the connection.");
+    portHandler->closePort();
     return -1;
   }
 
-  // dxl_comm_result = packetHandler->write1ByteTxRx(
-  //   portHandler, DXL2_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  // if (dxl_comm_result != COMM_SUCCESS) {
-  //   ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL2_ID);
-  //   return -1;
-  // }
+  // 토크 활성화
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL1_BODY_L_R, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL1_BODY_L_R);
+    return -1;
+  }
+
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return -1;
+  }
+
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return -1;
+  }
 
   ros::init(argc, argv, "read_write_node");
   ros::NodeHandle nh;
@@ -144,3 +192,4 @@ int main(int argc, char ** argv)
   portHandler->closePort();
   return 0;
 }
+
