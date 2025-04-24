@@ -61,6 +61,14 @@ using namespace dynamixel;
 PortHandler * portHandler;
 PacketHandler * packetHandler;
 
+// 전역 변수로 dxl3_home_position과 dxl3_limit_position 선언
+int32_t dxl1_L_limit = 2320;
+int32_t dxl1_R_limit = 1776;
+int32_t dxl2_L_limit = 4095;
+int32_t dxl2_R_limit = 0;
+int32_t dxl3_home_position = 0;
+int32_t dxl3_limit_position = 0;
+
 bool getPresentPositionCallback(
   dynamixel_sdk_examples::GetPosition::Request & req,
   dynamixel_sdk_examples::GetPosition::Response & res)
@@ -123,6 +131,144 @@ bool checkDeviceExistence(uint8_t id)
   }
 }
 
+bool initializeMotor3()
+{
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+  uint32_t prev_position = 0;
+  uint32_t current_position = 0;
+  bool position_stable = false;
+  int stable_count = 0;
+  
+  // 모터를 비활성화 한다
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_TORQUE_ENABLE, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to disable torque for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  // 전류제어 모드로 변경한다 (운영 모드 주소: 11, 전류제어 모드: 0)
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, 11, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to change operating mode for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  // 모터를 활성화 한다
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  // 전류제어 모드로 + 방향으로 10 만큼 부여한다 (전류 목표값 주소: 102)
+  dxl_comm_result = packetHandler->write2ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, 102, 222, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set current for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  ros::Time start_time = ros::Time::now();
+  ros::Rate rate(10); // 10Hz로 위치 확인
+  
+  // 위치를 주기적으로 읽는다
+  while (ros::ok() && !position_stable) {
+    // 이전 위치 저장
+    prev_position = current_position;
+    
+    // 현재 위치 읽기
+    dxl_comm_result = packetHandler->read4ByteTxRx(
+      portHandler, DXL3_HEAD_UPDOWN, ADDR_PRESENT_POSITION, &current_position, &dxl_error);
+    
+    if (dxl_comm_result != COMM_SUCCESS) {
+      ROS_ERROR("Failed to read position for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+      return false;
+    }
+    
+    // 위치 변화 확인
+    if (abs((int32_t)current_position - (int32_t)prev_position) < 5) {
+      stable_count++;
+    } else {
+      stable_count = 0;
+    }
+    
+    // 2초간 위치가 변하지 않으면 (10Hz에서 20회)
+    if (stable_count >= 20) {
+      position_stable = true;
+      dxl3_home_position = current_position - 20; // 20 마진
+      ROS_INFO("Home position found at: %d", dxl3_home_position);
+    }
+    
+    rate.sleep();
+  }
+  
+  // 모터를 비활성화 한다
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_TORQUE_ENABLE, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to disable torque for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  // 동작 모드를 확장위치제어모드로 변경한다 (확장위치제어모드: 4)
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, 11, 4, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to change operating mode for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  // 최소 위치 한계값 설정 (dxl3_home_position - 7300)
+  dxl3_limit_position = (int32_t)dxl3_home_position - 7300;
+  
+  
+  
+  // 모터를 활성화 한다
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  ROS_INFO("Motor 3 initialized successfully. Home position: %d, Min position: %d", 
+           dxl3_home_position, dxl3_limit_position);
+  return true;
+}
+
+int dxl_v3_up(){
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_GOAL_POSITION, dxl3_limit_position, &dxl_error);
+    
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set position for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+
+  return true;
+}
+
+int dxl_v3_down(){
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_GOAL_POSITION, dxl3_home_position, &dxl_error);
+
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set position for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+
+  return true;
+}
 
 int main(int argc, char ** argv)
 {
@@ -161,6 +307,18 @@ int main(int argc, char ** argv)
     return -1;
   }
 
+  ros::init(argc, argv, "read_write_node");
+  ros::NodeHandle nh;
+  
+  // ros::NodeHandle 생성 이후로 initializeMotor3() 호출 위치 이동
+  if (!initializeMotor3()) {
+    ROS_ERROR("Failed to initialize motor 3");
+    return -1;
+  }
+
+
+  dxl_v3_up();
+
   // 토크 활성화
   dxl_comm_result = packetHandler->write1ByteTxRx(
     portHandler, DXL1_BODY_L_R, ADDR_TORQUE_ENABLE, 1, &dxl_error);
@@ -183,8 +341,6 @@ int main(int argc, char ** argv)
     return -1;
   }
 
-  ros::init(argc, argv, "read_write_node");
-  ros::NodeHandle nh;
   ros::ServiceServer get_position_srv = nh.advertiseService("/get_position", getPresentPositionCallback);
   ros::Subscriber set_position_sub = nh.subscribe("/set_position", 10, setPositionCallback);
   ros::spin();
