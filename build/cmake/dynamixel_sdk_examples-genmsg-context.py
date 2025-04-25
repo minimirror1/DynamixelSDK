@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetPosition.msg;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SyncSetPosition.msg;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg"
+messages_str = "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetPosition.msg;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SyncSetPosition.msg;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg"
 services_str = "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv;/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv"
 pkg_name = "dynamixel_sdk_examples"
 dependencies_str = "std_msgs"

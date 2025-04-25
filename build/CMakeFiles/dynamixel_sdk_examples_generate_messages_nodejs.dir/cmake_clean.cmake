@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs"
   "devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/BulkSetItem.js"
+  "devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadCommand.js"
+  "devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadRotation.js"
+  "devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.js"
   "devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetPosition.js"
   "devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SyncSetPosition.js"
   "devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/BulkGetItem.js"

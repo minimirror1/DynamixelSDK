@@ -56,6 +56,9 @@ include CMakeFiles/dynamixel_sdk_examples_generate_messages_py.dir/progress.make
 CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetPosition.py
 CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SyncSetPosition.py
 CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_BulkSetItem.py
+CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadRotation.py
+CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadCommand.py
+CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetMotorSmooth.py
 CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_GetPosition.py
 CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_SyncGetPosition.py
 CMakeFiles/dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_BulkGetItem.py
@@ -78,45 +81,69 @@ devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_BulkSetItem.py: /roo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG dynamixel_sdk_examples/BulkSetItem"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg
 
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadRotation.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadRotation.py: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG dynamixel_sdk_examples/SetHeadRotation"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg
+
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadCommand.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadCommand.py: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG dynamixel_sdk_examples/SetHeadCommand"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg
+
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetMotorSmooth.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetMotorSmooth.py: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG dynamixel_sdk_examples/SetMotorSmooth"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg
+
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_GetPosition.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_GetPosition.py: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python code from SRV dynamixel_sdk_examples/GetPosition"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python code from SRV dynamixel_sdk_examples/GetPosition"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv
 
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_SyncGetPosition.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_SyncGetPosition.py: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python code from SRV dynamixel_sdk_examples/SyncGetPosition"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python code from SRV dynamixel_sdk_examples/SyncGetPosition"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv
 
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_BulkGetItem.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_BulkGetItem.py: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python code from SRV dynamixel_sdk_examples/BulkGetItem"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python code from SRV dynamixel_sdk_examples/BulkGetItem"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv
 
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SyncSetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_BulkSetItem.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadRotation.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadCommand.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetMotorSmooth.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_GetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_SyncGetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_BulkGetItem.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python msg __init__.py for dynamixel_sdk_examples"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python msg __init__.py for dynamixel_sdk_examples"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg --initpy
 
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SyncSetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_BulkSetItem.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadRotation.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadCommand.py
+devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetMotorSmooth.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_GetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_SyncGetPosition.py
 devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/__init__.py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_BulkGetItem.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python srv __init__.py for dynamixel_sdk_examples"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python srv __init__.py for dynamixel_sdk_examples"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv --initpy
 
 dynamixel_sdk_examples_generate_messages_py: CMakeFiles/dynamixel_sdk_examples_generate_messages_py
 dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetPosition.py
 dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SyncSetPosition.py
 dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_BulkSetItem.py
+dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadRotation.py
+dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadCommand.py
+dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetMotorSmooth.py
 dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_GetPosition.py
 dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_SyncGetPosition.py
 dynamixel_sdk_examples_generate_messages_py: devel/lib/python3/dist-packages/dynamixel_sdk_examples/srv/_BulkGetItem.py

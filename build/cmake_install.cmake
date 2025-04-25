@@ -133,6 +133,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetPosition.msg"
     "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SyncSetPosition.msg"
     "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg"
+    "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg"
+    "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg"
+    "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg"
     )
 endif()
 

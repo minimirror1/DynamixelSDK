@@ -56,6 +56,9 @@ include CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp.dir/progress.ma
 CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetPosition.lisp
 CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SyncSetPosition.lisp
 CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/BulkSetItem.lisp
+CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadRotation.lisp
+CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadCommand.lisp
+CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.lisp
 CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/GetPosition.lisp
 CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/SyncGetPosition.lisp
 CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/BulkGetItem.lisp
@@ -76,25 +79,43 @@ devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/BulkSetItem.lisp: /root/r
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from dynamixel_sdk_examples/BulkSetItem.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/common-lisp/ros/dynamixel_sdk_examples/msg
 
+devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadRotation.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadRotation.lisp: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from dynamixel_sdk_examples/SetHeadRotation.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/common-lisp/ros/dynamixel_sdk_examples/msg
+
+devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadCommand.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadCommand.lisp: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from dynamixel_sdk_examples/SetHeadCommand.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/common-lisp/ros/dynamixel_sdk_examples/msg
+
+devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.lisp: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from dynamixel_sdk_examples/SetMotorSmooth.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/common-lisp/ros/dynamixel_sdk_examples/msg
+
 devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/GetPosition.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/GetPosition.lisp: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from dynamixel_sdk_examples/GetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from dynamixel_sdk_examples/GetPosition.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/common-lisp/ros/dynamixel_sdk_examples/srv
 
 devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/SyncGetPosition.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/SyncGetPosition.lisp: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from dynamixel_sdk_examples/SyncGetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from dynamixel_sdk_examples/SyncGetPosition.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/common-lisp/ros/dynamixel_sdk_examples/srv
 
 devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/BulkGetItem.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/BulkGetItem.lisp: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from dynamixel_sdk_examples/BulkGetItem.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Lisp code from dynamixel_sdk_examples/BulkGetItem.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/common-lisp/ros/dynamixel_sdk_examples/srv
 
 dynamixel_sdk_examples_generate_messages_lisp: CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp
 dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetPosition.lisp
 dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SyncSetPosition.lisp
 dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/BulkSetItem.lisp
+dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadRotation.lisp
+dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadCommand.lisp
+dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.lisp
 dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/GetPosition.lisp
 dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/SyncGetPosition.lisp
 dynamixel_sdk_examples_generate_messages_lisp: devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/BulkGetItem.lisp

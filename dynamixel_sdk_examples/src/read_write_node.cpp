@@ -39,6 +39,9 @@
 #include "std_msgs/String.h"
 #include "dynamixel_sdk_examples/GetPosition.h"
 #include "dynamixel_sdk_examples/SetPosition.h"
+#include "dynamixel_sdk_examples/SetHeadRotation.h"
+#include "dynamixel_sdk_examples/SetHeadCommand.h"
+#include "dynamixel_sdk_examples/SetMotorSmooth.h"
 #include "dynamixel_sdk/dynamixel_sdk.h"
 
 using namespace dynamixel;
@@ -129,6 +132,98 @@ bool checkDeviceExistence(uint8_t id)
     ROS_ERROR("Device ID:%d does not exist. Error code: %d", id, dxl_comm_result);
     return false;
   }
+}
+
+int motor_torque_on(){
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+  
+  // DXL1 토크 활성화
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL1_BODY_L_R, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL1_BODY_L_R);
+    return false;
+  }
+  
+  // DXL2 토크 활성화
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return false;
+  }
+  
+  // DXL3 토크 활성화
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_TORQUE_ENABLE, 1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to enable torque for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+
+  ROS_INFO("Motor torque enabled");
+  
+  return true;
+}
+
+int motor_smooth(int vel,int ratio){
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+
+  int accel = vel / ratio;
+  
+  // DXL1 토크 해제
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL1_BODY_L_R, ADDR_TORQUE_ENABLE, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to disable torque for Dynamixel ID %d", DXL1_BODY_L_R);
+    return false;
+  }
+  
+  // DXL2 토크 해제
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, ADDR_TORQUE_ENABLE, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to disable torque for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return false;
+  }
+  
+  // DXL1 Profile Acceleration 설정
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL1_BODY_L_R, 108, accel*1.1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set Profile Acceleration for Dynamixel ID %d", DXL1_BODY_L_R);
+    return false;
+  }
+  
+  // DXL1 Profile Velocity 설정
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL1_BODY_L_R, 112, vel*1.1, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set Profile Velocity for Dynamixel ID %d", DXL1_BODY_L_R);
+    return false;
+  }
+  
+  // DXL2 Profile Acceleration 설정
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, 108, accel, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set Profile Acceleration for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return false;
+  }
+  
+  // DXL2 Profile Velocity 설정
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, 112, vel, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set Profile Velocity for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return false;
+  }
+
+   motor_torque_on();
+  
+  return true;
 }
 
 bool initializeMotor3()
@@ -240,7 +335,7 @@ bool initializeMotor3()
   return true;
 }
 
-int dxl_v3_up(){
+int head_up(){
   uint8_t dxl_error = 0;
   int dxl_comm_result = COMM_TX_FAIL;
 
@@ -255,7 +350,7 @@ int dxl_v3_up(){
   return true;
 }
 
-int dxl_v3_down(){
+int head_down(){
   uint8_t dxl_error = 0;
   int dxl_comm_result = COMM_TX_FAIL;
 
@@ -267,6 +362,150 @@ int dxl_v3_down(){
     return false;
   }
 
+  return true;
+}
+
+int head_rotate(int rot_position){
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+  uint32_t dxl1_position, dxl2_position;
+  
+  // rot_position 범위를 -1000에서 1000으로 제한
+  if (rot_position < -1000) rot_position = -1000;
+  if (rot_position > 1000) rot_position = 1000;
+  
+  // 회전 위치에 따른 dxl1, dxl2 위치 계산
+  if (rot_position == 0) {
+    dxl1_position = 2048;
+    dxl2_position = 2048;
+  } else if (rot_position < 0) {
+    // -1000 ~ 0 범위에서 dxl1_R_limit ~ 2048 사이를 비례 계산
+    float ratio = (float)(-rot_position) / 1000.0f;
+    dxl1_position = 2048 - (uint32_t)((2048 - dxl1_R_limit) * ratio);
+    dxl2_position = 2048 - (uint32_t)((2048 - dxl2_R_limit) * ratio);
+  } else {
+    // 0 ~ 1000 범위에서 2048 ~ dxl1_L_limit 사이를 비례 계산
+    float ratio = (float)(rot_position) / 1000.0f;
+    dxl1_position = 2048 + (uint32_t)((dxl1_L_limit - 2048) * ratio);
+    dxl2_position = 2048 + (uint32_t)((dxl2_L_limit - 2048) * ratio);
+  }
+  
+  // 모터 위치 설정
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL1_BODY_L_R, ADDR_GOAL_POSITION, dxl1_position, &dxl_error);
+    
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set position for Dynamixel ID %d", DXL1_BODY_L_R);
+    return false;
+  }
+  
+  dxl_comm_result = packetHandler->write4ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, ADDR_GOAL_POSITION, dxl2_position, &dxl_error);
+    
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set position for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return false;
+  }
+  
+  return true;
+}
+
+void setHeadRotationCallback(const dynamixel_sdk_examples::SetHeadRotation::ConstPtr & msg)
+{
+  int32_t position = msg->position;
+  
+  // position 값을 -1000 ~ 1000 범위로 제한
+  if (position < -1000) position = -1000;
+  if (position > 1000) position = 1000;
+  
+  ROS_INFO("Executing head_rotate command with position: %d", position);
+  head_rotate(position);
+}
+
+void setHeadCommandCallback(const dynamixel_sdk_examples::SetHeadCommand::ConstPtr & msg)
+{
+  std::string command = msg->command;  
+  
+  if (command == "up") {
+    ROS_INFO("Executing head_up command");
+    head_up();
+  } else if (command == "down") {
+    ROS_INFO("Executing head_down command");
+    head_down();
+  } else {
+    ROS_ERROR("Invalid head command: %s", command.c_str());
+  }
+}
+
+void setMotorSmoothCallback(const dynamixel_sdk_examples::SetMotorSmooth::ConstPtr & msg)
+{
+  int32_t velocity = msg->velocity;
+  int32_t ratio = msg->ratio;
+  
+  // 값이 너무 작거나 큰 경우 기본값으로 조정
+  if (velocity <= 0) velocity = 1000;
+  if (ratio <= 0) ratio = 5;
+  
+  ROS_INFO("Executing motor_smooth with velocity: %d, ratio: %d", velocity, ratio);
+  motor_smooth(velocity, ratio);
+}
+
+int set_Time_based_Profile(){
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+  
+  // DXL1 토크 해제
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL1_BODY_L_R, ADDR_TORQUE_ENABLE, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to disable torque for Dynamixel ID %d", DXL1_BODY_L_R);
+    return false;
+  }
+  
+  // DXL2 토크 해제
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, ADDR_TORQUE_ENABLE, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to disable torque for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return false;
+  }
+  
+  // DXL3 토크 해제
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, ADDR_TORQUE_ENABLE, 0, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to disable torque for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  // DXL1 Drive Mode 설정 (0x04: Time-based profile)
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL1_BODY_L_R, 10, 0x04, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set Drive Mode for Dynamixel ID %d", DXL1_BODY_L_R);
+    return false;
+  }
+  
+  // DXL2 Drive Mode 설정 (0x04: Time-based profile)
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL2_HEAD_L_R, 10, 0x04, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set Drive Mode for Dynamixel ID %d", DXL2_HEAD_L_R);
+    return false;
+  }
+  
+  // DXL3 Drive Mode 설정 (0x04: Time-based profile)
+  dxl_comm_result = packetHandler->write1ByteTxRx(
+    portHandler, DXL3_HEAD_UPDOWN, 10, 0x04, &dxl_error);
+  if (dxl_comm_result != COMM_SUCCESS) {
+    ROS_ERROR("Failed to set Drive Mode for Dynamixel ID %d", DXL3_HEAD_UPDOWN);
+    return false;
+  }
+  
+  // 토크 다시 활성화
+  motor_torque_on();
+  
+  ROS_INFO("Time-based Profile mode set for all motors");
   return true;
 }
 
@@ -310,6 +549,14 @@ int main(int argc, char ** argv)
   ros::init(argc, argv, "read_write_node");
   ros::NodeHandle nh;
   
+  ros::Duration(0.1).sleep(); // 노드가 초기화될 시간을 줍니다
+  
+    // Time-based Profile 모드 설정
+  if (!set_Time_based_Profile()) {
+    ROS_ERROR("Failed to set Time-based Profile mode");
+    return -1;
+  }
+
   // ros::NodeHandle 생성 이후로 initializeMotor3() 호출 위치 이동
   if (!initializeMotor3()) {
     ROS_ERROR("Failed to initialize motor 3");
@@ -317,7 +564,8 @@ int main(int argc, char ** argv)
   }
 
 
-  dxl_v3_up();
+
+  motor_smooth(3000, 3);
 
   // 토크 활성화
   dxl_comm_result = packetHandler->write1ByteTxRx(
@@ -343,6 +591,9 @@ int main(int argc, char ** argv)
 
   ros::ServiceServer get_position_srv = nh.advertiseService("/get_position", getPresentPositionCallback);
   ros::Subscriber set_position_sub = nh.subscribe("/set_position", 10, setPositionCallback);
+  ros::Subscriber set_head_rotation_sub = nh.subscribe("/set_head_rotation", 10, setHeadRotationCallback);
+  ros::Subscriber set_head_command_sub = nh.subscribe("/set_head_command", 10, setHeadCommandCallback);
+  ros::Subscriber set_motor_smooth_sub = nh.subscribe("/set_motor_smooth", 10, setMotorSmoothCallback);
   ros::spin();
 
   portHandler->closePort();

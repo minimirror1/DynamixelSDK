@@ -1,3 +1,32 @@
 {
-    "cmake.sourceDirectory": "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples"
+    "cmake.sourceDirectory": "/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "/opt/ros/*/include",
+        "/usr/include"
+    ],
+    "C_Cpp.default.browse.path": [
+        "${workspaceFolder}",
+        "/opt/ros/*/include"
+    ],
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.msg": "cpp",
+        "*.srv": "cpp",
+        "*.action": "cpp"
+    },
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/*/lib/python*/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/*/lib/python*/dist-packages"
+    ],
+    "ros.distro": "humble",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    }
 }

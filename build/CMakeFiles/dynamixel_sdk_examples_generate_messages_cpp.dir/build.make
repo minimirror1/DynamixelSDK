@@ -56,6 +56,9 @@ include CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp.dir/progress.mak
 CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetPosition.h
 CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SyncSetPosition.h
 CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/BulkSetItem.h
+CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetHeadRotation.h
+CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetHeadCommand.h
+CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetMotorSmooth.h
 CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/GetPosition.h
 CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SyncGetPosition.h
 CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/BulkGetItem.h
@@ -79,31 +82,52 @@ devel/include/dynamixel_sdk_examples/BulkSetItem.h: /opt/ros/noetic/share/gencpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from dynamixel_sdk_examples/BulkSetItem.msg"
 	cd /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples && /root/ros_ws/src/DynamixelSDK/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/include/dynamixel_sdk_examples -e /opt/ros/noetic/share/gencpp/cmake/..
 
+devel/include/dynamixel_sdk_examples/SetHeadRotation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+devel/include/dynamixel_sdk_examples/SetHeadRotation.h: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg
+devel/include/dynamixel_sdk_examples/SetHeadRotation.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from dynamixel_sdk_examples/SetHeadRotation.msg"
+	cd /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples && /root/ros_ws/src/DynamixelSDK/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/include/dynamixel_sdk_examples -e /opt/ros/noetic/share/gencpp/cmake/..
+
+devel/include/dynamixel_sdk_examples/SetHeadCommand.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+devel/include/dynamixel_sdk_examples/SetHeadCommand.h: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg
+devel/include/dynamixel_sdk_examples/SetHeadCommand.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from dynamixel_sdk_examples/SetHeadCommand.msg"
+	cd /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples && /root/ros_ws/src/DynamixelSDK/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/include/dynamixel_sdk_examples -e /opt/ros/noetic/share/gencpp/cmake/..
+
+devel/include/dynamixel_sdk_examples/SetMotorSmooth.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+devel/include/dynamixel_sdk_examples/SetMotorSmooth.h: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg
+devel/include/dynamixel_sdk_examples/SetMotorSmooth.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from dynamixel_sdk_examples/SetMotorSmooth.msg"
+	cd /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples && /root/ros_ws/src/DynamixelSDK/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/include/dynamixel_sdk_examples -e /opt/ros/noetic/share/gencpp/cmake/..
+
 devel/include/dynamixel_sdk_examples/GetPosition.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 devel/include/dynamixel_sdk_examples/GetPosition.h: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv
 devel/include/dynamixel_sdk_examples/GetPosition.h: /opt/ros/noetic/share/gencpp/msg.h.template
 devel/include/dynamixel_sdk_examples/GetPosition.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from dynamixel_sdk_examples/GetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from dynamixel_sdk_examples/GetPosition.srv"
 	cd /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples && /root/ros_ws/src/DynamixelSDK/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/include/dynamixel_sdk_examples -e /opt/ros/noetic/share/gencpp/cmake/..
 
 devel/include/dynamixel_sdk_examples/SyncGetPosition.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 devel/include/dynamixel_sdk_examples/SyncGetPosition.h: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv
 devel/include/dynamixel_sdk_examples/SyncGetPosition.h: /opt/ros/noetic/share/gencpp/msg.h.template
 devel/include/dynamixel_sdk_examples/SyncGetPosition.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from dynamixel_sdk_examples/SyncGetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from dynamixel_sdk_examples/SyncGetPosition.srv"
 	cd /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples && /root/ros_ws/src/DynamixelSDK/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/include/dynamixel_sdk_examples -e /opt/ros/noetic/share/gencpp/cmake/..
 
 devel/include/dynamixel_sdk_examples/BulkGetItem.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 devel/include/dynamixel_sdk_examples/BulkGetItem.h: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv
 devel/include/dynamixel_sdk_examples/BulkGetItem.h: /opt/ros/noetic/share/gencpp/msg.h.template
 devel/include/dynamixel_sdk_examples/BulkGetItem.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from dynamixel_sdk_examples/BulkGetItem.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from dynamixel_sdk_examples/BulkGetItem.srv"
 	cd /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples && /root/ros_ws/src/DynamixelSDK/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/include/dynamixel_sdk_examples -e /opt/ros/noetic/share/gencpp/cmake/..
 
 dynamixel_sdk_examples_generate_messages_cpp: CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp
 dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetPosition.h
 dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SyncSetPosition.h
 dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/BulkSetItem.h
+dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetHeadRotation.h
+dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetHeadCommand.h
+dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SetMotorSmooth.h
 dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/GetPosition.h
 dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/SyncGetPosition.h
 dynamixel_sdk_examples_generate_messages_cpp: devel/include/dynamixel_sdk_examples/BulkGetItem.h

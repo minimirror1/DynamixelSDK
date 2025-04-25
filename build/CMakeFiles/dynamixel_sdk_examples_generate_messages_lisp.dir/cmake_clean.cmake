@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp"
   "devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/BulkSetItem.lisp"
+  "devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadCommand.lisp"
+  "devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetHeadRotation.lisp"
+  "devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.lisp"
   "devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SetPosition.lisp"
   "devel/share/common-lisp/ros/dynamixel_sdk_examples/msg/SyncSetPosition.lisp"
   "devel/share/common-lisp/ros/dynamixel_sdk_examples/srv/BulkGetItem.lisp"

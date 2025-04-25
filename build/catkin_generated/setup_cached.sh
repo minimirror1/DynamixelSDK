@@ -9,7 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/root/ros_ws/src/DynamixelSDK/build/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/root/ros_ws/src/DynamixelSDK/build/devel/lib:$LD_LIBRARY_PATH"
-export PATH='/opt/ros/noetic/bin:/root/.cursor-server/cli/servers/Stable-ec408037b24566b11e6132c58bbe6ad27046eb90/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+export PATH='/opt/ros/noetic/bin:/root/.cursor-server/cli/servers/Stable-fd861c8a80c0f9e4e35294b1915ee8a7b29ae850/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export PKG_CONFIG_PATH="/root/ros_ws/src/DynamixelSDK/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/root/ros_ws/src/DynamixelSDK/build'
 export PYTHONPATH="/root/ros_ws/src/DynamixelSDK/build/devel/lib/python3/dist-packages:$PYTHONPATH"

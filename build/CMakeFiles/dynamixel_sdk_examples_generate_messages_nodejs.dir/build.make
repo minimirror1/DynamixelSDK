@@ -56,6 +56,9 @@ include CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs.dir/progress.
 CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetPosition.js
 CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SyncSetPosition.js
 CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/BulkSetItem.js
+CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadRotation.js
+CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadCommand.js
+CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.js
 CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/GetPosition.js
 CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/SyncGetPosition.js
 CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/BulkGetItem.js
@@ -76,25 +79,43 @@ devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/BulkSetItem.js: /root/ros_w
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from dynamixel_sdk_examples/BulkSetItem.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/gennodejs/ros/dynamixel_sdk_examples/msg
 
+devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadRotation.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadRotation.js: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from dynamixel_sdk_examples/SetHeadRotation.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/gennodejs/ros/dynamixel_sdk_examples/msg
+
+devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadCommand.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadCommand.js: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from dynamixel_sdk_examples/SetHeadCommand.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/gennodejs/ros/dynamixel_sdk_examples/msg
+
+devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.js: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from dynamixel_sdk_examples/SetMotorSmooth.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/gennodejs/ros/dynamixel_sdk_examples/msg
+
 devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/GetPosition.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/GetPosition.js: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from dynamixel_sdk_examples/GetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from dynamixel_sdk_examples/GetPosition.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/gennodejs/ros/dynamixel_sdk_examples/srv
 
 devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/SyncGetPosition.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/SyncGetPosition.js: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from dynamixel_sdk_examples/SyncGetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from dynamixel_sdk_examples/SyncGetPosition.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/gennodejs/ros/dynamixel_sdk_examples/srv
 
 devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/BulkGetItem.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/BulkGetItem.js: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from dynamixel_sdk_examples/BulkGetItem.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Javascript code from dynamixel_sdk_examples/BulkGetItem.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/gennodejs/ros/dynamixel_sdk_examples/srv
 
 dynamixel_sdk_examples_generate_messages_nodejs: CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs
 dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetPosition.js
 dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SyncSetPosition.js
 dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/BulkSetItem.js
+dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadRotation.js
+dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetHeadCommand.js
+dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.js
 dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/GetPosition.js
 dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/SyncGetPosition.js
 dynamixel_sdk_examples_generate_messages_nodejs: devel/share/gennodejs/ros/dynamixel_sdk_examples/srv/BulkGetItem.js

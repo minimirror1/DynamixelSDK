@@ -56,6 +56,9 @@ include CMakeFiles/dynamixel_sdk_examples_generate_messages_eus.dir/progress.mak
 CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetPosition.l
 CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SyncSetPosition.l
 CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/BulkSetItem.l
+CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadRotation.l
+CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadCommand.l
+CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.l
 CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/srv/GetPosition.l
 CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/srv/SyncGetPosition.l
 CMakeFiles/dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/srv/BulkGetItem.l
@@ -77,29 +80,47 @@ devel/share/roseus/ros/dynamixel_sdk_examples/msg/BulkSetItem.l: /root/ros_ws/sr
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from dynamixel_sdk_examples/BulkSetItem.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/BulkSetItem.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples/msg
 
+devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadRotation.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadRotation.l: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from dynamixel_sdk_examples/SetHeadRotation.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadRotation.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples/msg
+
+devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadCommand.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadCommand.l: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from dynamixel_sdk_examples/SetHeadCommand.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetHeadCommand.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples/msg
+
+devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.l: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from dynamixel_sdk_examples/SetMotorSmooth.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg/SetMotorSmooth.msg -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples/msg
+
 devel/share/roseus/ros/dynamixel_sdk_examples/srv/GetPosition.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 devel/share/roseus/ros/dynamixel_sdk_examples/srv/GetPosition.l: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from dynamixel_sdk_examples/GetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp code from dynamixel_sdk_examples/GetPosition.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/GetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples/srv
 
 devel/share/roseus/ros/dynamixel_sdk_examples/srv/SyncGetPosition.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 devel/share/roseus/ros/dynamixel_sdk_examples/srv/SyncGetPosition.l: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from dynamixel_sdk_examples/SyncGetPosition.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from dynamixel_sdk_examples/SyncGetPosition.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/SyncGetPosition.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples/srv
 
 devel/share/roseus/ros/dynamixel_sdk_examples/srv/BulkGetItem.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 devel/share/roseus/ros/dynamixel_sdk_examples/srv/BulkGetItem.l: /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from dynamixel_sdk_examples/BulkGetItem.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp code from dynamixel_sdk_examples/BulkGetItem.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/srv/BulkGetItem.srv -Idynamixel_sdk_examples:/root/ros_ws/src/DynamixelSDK/dynamixel_sdk_examples/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p dynamixel_sdk_examples -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples/srv
 
 devel/share/roseus/ros/dynamixel_sdk_examples/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp manifest code for dynamixel_sdk_examples"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/ros_ws/src/DynamixelSDK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating EusLisp manifest code for dynamixel_sdk_examples"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /root/ros_ws/src/DynamixelSDK/build/devel/share/roseus/ros/dynamixel_sdk_examples dynamixel_sdk_examples std_msgs
 
 dynamixel_sdk_examples_generate_messages_eus: CMakeFiles/dynamixel_sdk_examples_generate_messages_eus
 dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetPosition.l
 dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SyncSetPosition.l
 dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/BulkSetItem.l
+dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadRotation.l
+dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetHeadCommand.l
+dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/msg/SetMotorSmooth.l
 dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/srv/GetPosition.l
 dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/srv/SyncGetPosition.l
 dynamixel_sdk_examples_generate_messages_eus: devel/share/roseus/ros/dynamixel_sdk_examples/srv/BulkGetItem.l

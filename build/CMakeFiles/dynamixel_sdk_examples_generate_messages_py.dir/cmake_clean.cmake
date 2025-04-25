@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dynamixel_sdk_examples_generate_messages_py"
   "devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_BulkSetItem.py"
+  "devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadCommand.py"
+  "devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetHeadRotation.py"
+  "devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetMotorSmooth.py"
   "devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SetPosition.py"
   "devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/_SyncSetPosition.py"
   "devel/lib/python3/dist-packages/dynamixel_sdk_examples/msg/__init__.py"

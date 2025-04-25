@@ -27,6 +27,9 @@ add_message_files(
     SetPosition.msg
     SyncSetPosition.msg
     BulkSetItem.msg
+    SetHeadRotation.msg
+    SetHeadCommand.msg
+    SetMotorSmooth.msg
 )
 
 ## Generate services in the 'srv' folder
